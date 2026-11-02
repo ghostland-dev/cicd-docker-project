@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 if (process.env.NODE_ENV === 'production') {
   mongoose
     .connect(
-      '***REMOVED***'
+      process.env.MONGO_URI || 'mongodb://localhost:27017/vue3c23'
     )
     .then(() => {
       console.info('Connected [DB PROD] !');
